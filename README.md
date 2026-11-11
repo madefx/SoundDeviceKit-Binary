@@ -5,7 +5,7 @@ and Zoom recorders (H3-VR with BTA-1: REC/STOP in sync, status, Mic Position, me
 recordings over USB.
 
 This repository distributes SoundDeviceKit as a precompiled, single-module `SoundDeviceKit.xcframework`
-(iOS 15+, iOS Simulator, macOS 12+). Current version: **0.1.1**.
+(iOS 15+, iOS Simulator, macOS 12+). Current version: **0.1.2**.
 
 © 2026 MadeFX. Free for noncommercial use under [PolyForm Noncommercial 1.0.0](LICENSE). **Commercial use
 requires a signed license from MadeFX** ([LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md)).
@@ -29,12 +29,12 @@ machine then needs a GitHub token so Swift Package Manager can download the bina
 ## 2. Add the package
 
 Xcode: **File › Add Package Dependencies…**, enter `https://github.com/madefx/SoundDeviceKit-Binary.git`, choose
-**Up to Next Minor Version** from `0.1.1`, and add the `SoundDeviceKit` product to your app target.
+**Up to Next Minor Version** from `0.1.2`, and add the `SoundDeviceKit` product to your app target.
 
 Or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/madefx/SoundDeviceKit-Binary.git", .upToNextMinor(from: "0.1.1")),
+.package(url: "https://github.com/madefx/SoundDeviceKit-Binary.git", .upToNextMinor(from: "0.1.2")),
 // target dependency:
 .product(name: "SoundDeviceKit", package: "SoundDeviceKit-Binary"),
 ```
