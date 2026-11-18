@@ -8,25 +8,10 @@ This repository distributes SoundDeviceKit as a precompiled, single-module `Soun
 (iOS 15+, iOS Simulator, macOS 12+). Current version: **0.1.2**.
 
 © 2026 MadeFX. Free for noncommercial use under [PolyForm Noncommercial 1.0.0](LICENSE). **Commercial use
-requires a signed license from MadeFX** ([LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md)).
+requires a signed license from MadeFX** ([LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md)), including use in free apps
+published by a company. Downloading it is open to everyone; the license decides how you may use it.
 
-## 1. Get access
-
-This repository is private. MadeFX adds your developers' GitHub accounts (read access). Each developer and each CI
-machine then needs a GitHub token so Swift Package Manager can download the binary:
-
-1. Create a token at <https://github.com/settings/tokens>: a **fine-grained** token with read-only *Contents* access
-   to `madefx/SoundDeviceKit-Binary`, or a classic token with the `repo` scope.
-2. Add it to `~/.netrc` (create the file if needed, then `chmod 600 ~/.netrc`):
-   ```
-   machine api.github.com
-     login YOUR_GITHUB_USERNAME
-     password YOUR_TOKEN
-   ```
-   Xcode and `swift build` read this file when downloading the binary. On CI, write the same file from a secret.
-3. Make sure Git can clone the repository: sign in under **Xcode › Settings › Accounts › GitHub**, or use SSH.
-
-## 2. Add the package
+## 1. Add the package
 
 Xcode: **File › Add Package Dependencies…**, enter `https://github.com/madefx/SoundDeviceKit-Binary.git`, choose
 **Up to Next Minor Version** from `0.1.2`, and add the `SoundDeviceKit` product to your app target.
@@ -41,10 +26,7 @@ Or in `Package.swift`:
 
 Before 1.0, minor versions (0.1 → 0.2) may change the API; patch versions never do.
 
-If the download fails with a 404 or "invalid archive", the token is missing, expired, or can't read this
-repository.
-
-## 3. Configure the app
+## 2. Configure the app
 
 - Add `NSBluetoothAlwaysUsageDescription` to Info.plist.
 - For background connections, enable the `bluetooth-central` background mode and create the manager with
