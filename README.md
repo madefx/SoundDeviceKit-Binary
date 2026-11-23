@@ -1,12 +1,12 @@
 # SoundDeviceKit (binary)
 
 Connect iOS, macOS and Android apps to Bluetooth sound devices: SPL meters (Benetech dB-Tester protocol, Jansen
-SmartBird) and Zoom recorders (H3-VR with BTA-1: REC/STOP in sync, status, Mic Position, menu, Finder), plus
+SmartBird; UNI-T UT353BT) and Zoom recorders (H3-VR with BTA-1: REC/STOP in sync, status, Mic Position, menu, Finder), plus
 importing recordings over USB.
 
 This repository distributes SoundDeviceKit for Apple platforms as a precompiled, single-module
 `SoundDeviceKit.xcframework` (iOS 15+, iOS Simulator, macOS 12+), and for Android as Maven packages in its GitHub
-Packages registry (Android 8.0+, see [Android](#android)). Current version: **0.1.2**.
+Packages registry (Android 8.0+, see [Android](#android)). Current version: **0.2.0**.
 
 © 2026 MadeFX. Free for noncommercial use under [PolyForm Noncommercial 1.0.0](LICENSE). **Commercial use
 requires a signed license from MadeFX** ([LICENSE-COMMERCIAL.md](LICENSE-COMMERCIAL.md)), including use in free apps
@@ -15,12 +15,12 @@ published by a company. Downloading it is open to everyone; the license decides 
 ## 1. Add the package
 
 Xcode: **File › Add Package Dependencies…**, enter `https://github.com/madefx/SoundDeviceKit-Binary.git`, choose
-**Up to Next Minor Version** from `0.1.2`, and add the `SoundDeviceKit` product to your app target.
+**Up to Next Minor Version** from `0.2.0`, and add the `SoundDeviceKit` product to your app target.
 
 Or in `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/madefx/SoundDeviceKit-Binary.git", .upToNextMinor(from: "0.1.2")),
+.package(url: "https://github.com/madefx/SoundDeviceKit-Binary.git", .upToNextMinor(from: "0.2.0")),
 // target dependency:
 .product(name: "SoundDeviceKit", package: "SoundDeviceKit-Binary"),
 ```
@@ -84,7 +84,7 @@ and Flow.
    ```
 3. **Dependency**, pinned to the exact version (before 1.0 a minor version may change the API):
    ```kotlin
-   implementation("com.madefx.sounddevicekit:sounddevicekit:0.1.2")
+   implementation("com.madefx.sounddevicekit:sounddevicekit:0.2.0")
    ```
    The app's `gradle.properties` needs `android.useAndroidX=true` (Android Studio projects have it already).
 
@@ -102,6 +102,6 @@ if (device is SoundLevelMeter) {
 ```
 
 `sounddevicekit` brings in every module; each is also its own package (`sounddevicekit-core`, `-ble`,
-`-drivers-benetech`, `-drivers-zoom`, `-recording-import`, `-mock`). Each package ships its sources, so Android
+`-drivers-benetech`, `-drivers-unit`, `-drivers-zoom`, `-drivers-orb`, `-recording-import`, `-mock`). Each package ships its sources, so Android
 Studio shows the API documentation, and carries `LICENSE` and `LICENSE-COMMERCIAL.md` under
 `META-INF/<package>/`. The same license applies as for the Swift binary.

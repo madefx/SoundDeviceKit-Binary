@@ -1,5 +1,5 @@
 // swift-tools-version: 5.9
-// SoundDeviceKit 0.1.2 — binary distribution. © 2026 MadeFX; see LICENSE and LICENSE-COMMERCIAL.md.
+// SoundDeviceKit 0.2.0 — binary distribution. © 2026 MadeFX; see LICENSE and LICENSE-COMMERCIAL.md.
 import PackageDescription
 
 let package = Package(
@@ -9,8 +9,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SoundDeviceKit",
-            url: "https://api.github.com/repos/madefx/SoundDeviceKit-Binary/releases/assets/735493363.zip",
-            checksum: "1131a3d2514887bafced5f60b38002cafc6677ddefed297615cd16a94efdb470"
+            url: "https://github.com/madefx/SoundDeviceKit-Binary/releases/download/0.2.0/SoundDeviceKit-0.2.0.xcframework.zip",
+            checksum: "508be9d7df1ab852a9117bd8f4a5733d49af7efebdeb5367cd6dbc504ccd7e75"
         ),
     ]
 )
